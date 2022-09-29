@@ -7,9 +7,14 @@ fn link_cpp() {
     println!("cargo:rustc-link-lib=c++");  
 }
 
-#[cfg(not(target_os = "macos"))]
+#[cfg(target_os = "linux")]
 fn link_cpp() {
     println!("cargo:rustc-link-lib=stdc++");  
+}
+
+#[cfg(target_os = "windows")]
+fn link_cpp() {
+    // unneeded for windows
 }
 
 fn main() {
