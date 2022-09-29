@@ -19,9 +19,8 @@ fn main() {
     let dst = Config::new("c-wrapper")
                 // .cxxflag("-fno-rtti")
                 // .no_build_target(true)
-                .build_target("linkrs")
                 .build();
-    let builddir = dst.join("build");
+    let builddir = dst.join("lib");
     println!("cargo:rustc-link-search=native={}", builddir.display());
     println!("cargo:rustc-link-lib=static=linkrs");
     link_cpp();

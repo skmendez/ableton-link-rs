@@ -6,3 +6,7 @@ include(../ableton/link/AbletonLinkConfig.cmake)
 
 add_library(linkrs STATIC link_rs.cpp)
 target_link_libraries(linkrs Ableton::Link)
+install (TARGETS linkrs
+        ARCHIVE DESTINATION lib
+        LIBRARY DESTINATION lib
+        RUNTIME DESTINATION bin)
